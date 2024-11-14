@@ -32,6 +32,8 @@ def facedetect():
         msg = frameInfo()
         msg.centerX = frame_width // 2  # Use frame center as default
         msg.centerY = frame_height // 2  # Use frame center as default
+        msg.errorX = 0  # Default error when no face detected
+        msg.errorY = 0  # Default error when no face detected
         msg.isDetected = False
 
         # Calculate FPS
@@ -45,11 +47,20 @@ def facedetect():
 
         # Update message if face is detected
         if len(faces) > 0:
-            # Use the first detected face
-            x, y, w, h = faces[0]
+            # Find the largest face
+            largest_face = max(faces, key=lambda face: face[2] * face[3])  # face[2] is w, face[3] is h
+            x, y, w, h = largest_face
             # Calculate center of the face
             msg.centerX = x + w//2
             msg.centerY = y + h//2
+            # Calculate errors (desired - current)
+            error_threshold = 30  # Threshold for considering movement significant
+            raw_error_x = (frame_width // 2) - msg.centerX
+            raw_error_y = (frame_height // 2) - msg.centerY
+            
+            # Apply threshold to errors
+            msg.errorX = raw_error_x if abs(raw_error_x) > error_threshold else 0
+            msg.errorY = raw_error_y if abs(raw_error_y) > error_threshold else 0
             msg.isDetected = True
             
             # Draw rectangle
