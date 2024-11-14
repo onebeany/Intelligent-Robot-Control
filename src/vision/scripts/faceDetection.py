@@ -2,6 +2,8 @@
 import cv2
 import numpy as np
 import rospy
+import rospkg
+import os
 from vision.msg import frameInfo
 
 def facedetect():
@@ -10,7 +12,20 @@ def facedetect():
     pub = rospy.Publisher('face_info', frameInfo, queue_size=10)
     rate = rospy.Rate(30)  # 30Hz to match common webcam framerates
     
-    face_cascade = cv2.CascadeClassifier("/home/onebean/catkin_ws/src/vision/src/opencv/data/haarcascades/haarcascade_frontalface_default.xml")
+    # Get package path and cascade file
+    rospack = rospkg.RosPack()
+    package_path = rospack.get_path('vision')
+    cascade_path = os.path.join(package_path, 'src', 'opencv', 'data', 'haarcascades', 'haarcascade_frontalface_default.xml')
+    
+    # Check if cascade file exists
+    if not os.path.isfile(cascade_path):
+        rospy.logerr(f"Cascade file not found at: {cascade_path}")
+        return
+        
+    face_cascade = cv2.CascadeClassifier(cascade_path)
+    if face_cascade.empty():
+        rospy.logerr("Failed to load cascade classifier")
+        return
     
     try:
         cap = cv2.VideoCapture(0)
