@@ -63,6 +63,7 @@ all: open_manipulator/open_manipulator_control_gui/all
 all: open_manipulator/open_manipulator_controller/all
 all: open_manipulator/open_manipulator_teleop/all
 all: open_manipulator_dependencies/roboticsgroup_gazebo_plugins/all
+all: vision/all
 all: open_manipulator/open_manipulator_description/all
 all: open_manipulator_simulations/open_manipulator_gazebo/all
 
@@ -79,6 +80,7 @@ preinstall: open_manipulator/open_manipulator_control_gui/preinstall
 preinstall: open_manipulator/open_manipulator_controller/preinstall
 preinstall: open_manipulator/open_manipulator_teleop/preinstall
 preinstall: open_manipulator_dependencies/roboticsgroup_gazebo_plugins/preinstall
+preinstall: vision/preinstall
 preinstall: open_manipulator/open_manipulator_description/preinstall
 preinstall: open_manipulator_simulations/open_manipulator_gazebo/preinstall
 
@@ -100,6 +102,7 @@ clean: open_manipulator/open_manipulator_control_gui/clean
 clean: open_manipulator/open_manipulator_controller/clean
 clean: open_manipulator/open_manipulator_teleop/clean
 clean: open_manipulator_dependencies/roboticsgroup_gazebo_plugins/clean
+clean: vision/clean
 clean: open_manipulator/open_manipulator_description/clean
 clean: open_manipulator_simulations/open_manipulator_gazebo/clean
 
@@ -478,6 +481,35 @@ open_manipulator_simulations/open_manipulator_simulations/preinstall:
 open_manipulator_simulations/open_manipulator_simulations/clean:
 
 .PHONY : open_manipulator_simulations/open_manipulator_simulations/clean
+
+#=============================================================================
+# Directory level rules for directory vision
+
+# Recursive "all" directory target.
+vision/all: vision/CMakeFiles/vision_generate_messages.dir/all
+
+.PHONY : vision/all
+
+# Recursive "preinstall" directory target.
+vision/preinstall:
+
+.PHONY : vision/preinstall
+
+# Recursive "clean" directory target.
+vision/clean: vision/CMakeFiles/vision_generate_messages.dir/clean
+vision/clean: vision/CMakeFiles/vision_generate_messages_cpp.dir/clean
+vision/clean: vision/CMakeFiles/vision_generate_messages_nodejs.dir/clean
+vision/clean: vision/CMakeFiles/_vision_generate_messages_check_deps_frameInfo.dir/clean
+vision/clean: vision/CMakeFiles/vision_genlisp.dir/clean
+vision/clean: vision/CMakeFiles/vision_gencpp.dir/clean
+vision/clean: vision/CMakeFiles/vision_geneus.dir/clean
+vision/clean: vision/CMakeFiles/vision_generate_messages_lisp.dir/clean
+vision/clean: vision/CMakeFiles/vision_gennodejs.dir/clean
+vision/clean: vision/CMakeFiles/vision_generate_messages_eus.dir/clean
+vision/clean: vision/CMakeFiles/vision_genpy.dir/clean
+vision/clean: vision/CMakeFiles/vision_generate_messages_py.dir/clean
+
+.PHONY : vision/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/doxygen.dir
@@ -4107,6 +4139,339 @@ tf2_msgs_generate_messages_py: open_manipulator_dependencies/roboticsgroup_gazeb
 open_manipulator_dependencies/roboticsgroup_gazebo_plugins/CMakeFiles/tf2_msgs_generate_messages_py.dir/clean:
 	$(MAKE) -f open_manipulator_dependencies/roboticsgroup_gazebo_plugins/CMakeFiles/tf2_msgs_generate_messages_py.dir/build.make open_manipulator_dependencies/roboticsgroup_gazebo_plugins/CMakeFiles/tf2_msgs_generate_messages_py.dir/clean
 .PHONY : open_manipulator_dependencies/roboticsgroup_gazebo_plugins/CMakeFiles/tf2_msgs_generate_messages_py.dir/clean
+
+#=============================================================================
+# Target rules for target vision/CMakeFiles/vision_generate_messages.dir
+
+# All Build rule for target.
+vision/CMakeFiles/vision_generate_messages.dir/all: vision/CMakeFiles/vision_generate_messages_cpp.dir/all
+vision/CMakeFiles/vision_generate_messages.dir/all: vision/CMakeFiles/vision_generate_messages_nodejs.dir/all
+vision/CMakeFiles/vision_generate_messages.dir/all: vision/CMakeFiles/vision_generate_messages_lisp.dir/all
+vision/CMakeFiles/vision_generate_messages.dir/all: vision/CMakeFiles/vision_generate_messages_eus.dir/all
+vision/CMakeFiles/vision_generate_messages.dir/all: vision/CMakeFiles/vision_generate_messages_py.dir/all
+	$(MAKE) -f vision/CMakeFiles/vision_generate_messages.dir/build.make vision/CMakeFiles/vision_generate_messages.dir/depend
+	$(MAKE) -f vision/CMakeFiles/vision_generate_messages.dir/build.make vision/CMakeFiles/vision_generate_messages.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onebean/catkin_ws/build/CMakeFiles --progress-num= "Built target vision_generate_messages"
+.PHONY : vision/CMakeFiles/vision_generate_messages.dir/all
+
+# Build rule for subdir invocation for target.
+vision/CMakeFiles/vision_generate_messages.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onebean/catkin_ws/build/CMakeFiles 7
+	$(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_generate_messages.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onebean/catkin_ws/build/CMakeFiles 0
+.PHONY : vision/CMakeFiles/vision_generate_messages.dir/rule
+
+# Convenience name for target.
+vision_generate_messages: vision/CMakeFiles/vision_generate_messages.dir/rule
+
+.PHONY : vision_generate_messages
+
+# clean rule for target.
+vision/CMakeFiles/vision_generate_messages.dir/clean:
+	$(MAKE) -f vision/CMakeFiles/vision_generate_messages.dir/build.make vision/CMakeFiles/vision_generate_messages.dir/clean
+.PHONY : vision/CMakeFiles/vision_generate_messages.dir/clean
+
+#=============================================================================
+# Target rules for target vision/CMakeFiles/vision_generate_messages_cpp.dir
+
+# All Build rule for target.
+vision/CMakeFiles/vision_generate_messages_cpp.dir/all: open_manipulator_msgs/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+vision/CMakeFiles/vision_generate_messages_cpp.dir/all: vision/CMakeFiles/_vision_generate_messages_check_deps_frameInfo.dir/all
+	$(MAKE) -f vision/CMakeFiles/vision_generate_messages_cpp.dir/build.make vision/CMakeFiles/vision_generate_messages_cpp.dir/depend
+	$(MAKE) -f vision/CMakeFiles/vision_generate_messages_cpp.dir/build.make vision/CMakeFiles/vision_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onebean/catkin_ws/build/CMakeFiles --progress-num=92 "Built target vision_generate_messages_cpp"
+.PHONY : vision/CMakeFiles/vision_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+vision/CMakeFiles/vision_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onebean/catkin_ws/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onebean/catkin_ws/build/CMakeFiles 0
+.PHONY : vision/CMakeFiles/vision_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+vision_generate_messages_cpp: vision/CMakeFiles/vision_generate_messages_cpp.dir/rule
+
+.PHONY : vision_generate_messages_cpp
+
+# clean rule for target.
+vision/CMakeFiles/vision_generate_messages_cpp.dir/clean:
+	$(MAKE) -f vision/CMakeFiles/vision_generate_messages_cpp.dir/build.make vision/CMakeFiles/vision_generate_messages_cpp.dir/clean
+.PHONY : vision/CMakeFiles/vision_generate_messages_cpp.dir/clean
+
+#=============================================================================
+# Target rules for target vision/CMakeFiles/vision_generate_messages_nodejs.dir
+
+# All Build rule for target.
+vision/CMakeFiles/vision_generate_messages_nodejs.dir/all: open_manipulator_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+vision/CMakeFiles/vision_generate_messages_nodejs.dir/all: vision/CMakeFiles/_vision_generate_messages_check_deps_frameInfo.dir/all
+	$(MAKE) -f vision/CMakeFiles/vision_generate_messages_nodejs.dir/build.make vision/CMakeFiles/vision_generate_messages_nodejs.dir/depend
+	$(MAKE) -f vision/CMakeFiles/vision_generate_messages_nodejs.dir/build.make vision/CMakeFiles/vision_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onebean/catkin_ws/build/CMakeFiles --progress-num=96 "Built target vision_generate_messages_nodejs"
+.PHONY : vision/CMakeFiles/vision_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+vision/CMakeFiles/vision_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onebean/catkin_ws/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onebean/catkin_ws/build/CMakeFiles 0
+.PHONY : vision/CMakeFiles/vision_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+vision_generate_messages_nodejs: vision/CMakeFiles/vision_generate_messages_nodejs.dir/rule
+
+.PHONY : vision_generate_messages_nodejs
+
+# clean rule for target.
+vision/CMakeFiles/vision_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f vision/CMakeFiles/vision_generate_messages_nodejs.dir/build.make vision/CMakeFiles/vision_generate_messages_nodejs.dir/clean
+.PHONY : vision/CMakeFiles/vision_generate_messages_nodejs.dir/clean
+
+#=============================================================================
+# Target rules for target vision/CMakeFiles/_vision_generate_messages_check_deps_frameInfo.dir
+
+# All Build rule for target.
+vision/CMakeFiles/_vision_generate_messages_check_deps_frameInfo.dir/all:
+	$(MAKE) -f vision/CMakeFiles/_vision_generate_messages_check_deps_frameInfo.dir/build.make vision/CMakeFiles/_vision_generate_messages_check_deps_frameInfo.dir/depend
+	$(MAKE) -f vision/CMakeFiles/_vision_generate_messages_check_deps_frameInfo.dir/build.make vision/CMakeFiles/_vision_generate_messages_check_deps_frameInfo.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onebean/catkin_ws/build/CMakeFiles --progress-num= "Built target _vision_generate_messages_check_deps_frameInfo"
+.PHONY : vision/CMakeFiles/_vision_generate_messages_check_deps_frameInfo.dir/all
+
+# Build rule for subdir invocation for target.
+vision/CMakeFiles/_vision_generate_messages_check_deps_frameInfo.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onebean/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/_vision_generate_messages_check_deps_frameInfo.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onebean/catkin_ws/build/CMakeFiles 0
+.PHONY : vision/CMakeFiles/_vision_generate_messages_check_deps_frameInfo.dir/rule
+
+# Convenience name for target.
+_vision_generate_messages_check_deps_frameInfo: vision/CMakeFiles/_vision_generate_messages_check_deps_frameInfo.dir/rule
+
+.PHONY : _vision_generate_messages_check_deps_frameInfo
+
+# clean rule for target.
+vision/CMakeFiles/_vision_generate_messages_check_deps_frameInfo.dir/clean:
+	$(MAKE) -f vision/CMakeFiles/_vision_generate_messages_check_deps_frameInfo.dir/build.make vision/CMakeFiles/_vision_generate_messages_check_deps_frameInfo.dir/clean
+.PHONY : vision/CMakeFiles/_vision_generate_messages_check_deps_frameInfo.dir/clean
+
+#=============================================================================
+# Target rules for target vision/CMakeFiles/vision_genlisp.dir
+
+# All Build rule for target.
+vision/CMakeFiles/vision_genlisp.dir/all: vision/CMakeFiles/vision_generate_messages_lisp.dir/all
+	$(MAKE) -f vision/CMakeFiles/vision_genlisp.dir/build.make vision/CMakeFiles/vision_genlisp.dir/depend
+	$(MAKE) -f vision/CMakeFiles/vision_genlisp.dir/build.make vision/CMakeFiles/vision_genlisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onebean/catkin_ws/build/CMakeFiles --progress-num= "Built target vision_genlisp"
+.PHONY : vision/CMakeFiles/vision_genlisp.dir/all
+
+# Build rule for subdir invocation for target.
+vision/CMakeFiles/vision_genlisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onebean/catkin_ws/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_genlisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onebean/catkin_ws/build/CMakeFiles 0
+.PHONY : vision/CMakeFiles/vision_genlisp.dir/rule
+
+# Convenience name for target.
+vision_genlisp: vision/CMakeFiles/vision_genlisp.dir/rule
+
+.PHONY : vision_genlisp
+
+# clean rule for target.
+vision/CMakeFiles/vision_genlisp.dir/clean:
+	$(MAKE) -f vision/CMakeFiles/vision_genlisp.dir/build.make vision/CMakeFiles/vision_genlisp.dir/clean
+.PHONY : vision/CMakeFiles/vision_genlisp.dir/clean
+
+#=============================================================================
+# Target rules for target vision/CMakeFiles/vision_gencpp.dir
+
+# All Build rule for target.
+vision/CMakeFiles/vision_gencpp.dir/all: vision/CMakeFiles/vision_generate_messages_cpp.dir/all
+	$(MAKE) -f vision/CMakeFiles/vision_gencpp.dir/build.make vision/CMakeFiles/vision_gencpp.dir/depend
+	$(MAKE) -f vision/CMakeFiles/vision_gencpp.dir/build.make vision/CMakeFiles/vision_gencpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onebean/catkin_ws/build/CMakeFiles --progress-num= "Built target vision_gencpp"
+.PHONY : vision/CMakeFiles/vision_gencpp.dir/all
+
+# Build rule for subdir invocation for target.
+vision/CMakeFiles/vision_gencpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onebean/catkin_ws/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_gencpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onebean/catkin_ws/build/CMakeFiles 0
+.PHONY : vision/CMakeFiles/vision_gencpp.dir/rule
+
+# Convenience name for target.
+vision_gencpp: vision/CMakeFiles/vision_gencpp.dir/rule
+
+.PHONY : vision_gencpp
+
+# clean rule for target.
+vision/CMakeFiles/vision_gencpp.dir/clean:
+	$(MAKE) -f vision/CMakeFiles/vision_gencpp.dir/build.make vision/CMakeFiles/vision_gencpp.dir/clean
+.PHONY : vision/CMakeFiles/vision_gencpp.dir/clean
+
+#=============================================================================
+# Target rules for target vision/CMakeFiles/vision_geneus.dir
+
+# All Build rule for target.
+vision/CMakeFiles/vision_geneus.dir/all: vision/CMakeFiles/vision_generate_messages_eus.dir/all
+	$(MAKE) -f vision/CMakeFiles/vision_geneus.dir/build.make vision/CMakeFiles/vision_geneus.dir/depend
+	$(MAKE) -f vision/CMakeFiles/vision_geneus.dir/build.make vision/CMakeFiles/vision_geneus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onebean/catkin_ws/build/CMakeFiles --progress-num= "Built target vision_geneus"
+.PHONY : vision/CMakeFiles/vision_geneus.dir/all
+
+# Build rule for subdir invocation for target.
+vision/CMakeFiles/vision_geneus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onebean/catkin_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_geneus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onebean/catkin_ws/build/CMakeFiles 0
+.PHONY : vision/CMakeFiles/vision_geneus.dir/rule
+
+# Convenience name for target.
+vision_geneus: vision/CMakeFiles/vision_geneus.dir/rule
+
+.PHONY : vision_geneus
+
+# clean rule for target.
+vision/CMakeFiles/vision_geneus.dir/clean:
+	$(MAKE) -f vision/CMakeFiles/vision_geneus.dir/build.make vision/CMakeFiles/vision_geneus.dir/clean
+.PHONY : vision/CMakeFiles/vision_geneus.dir/clean
+
+#=============================================================================
+# Target rules for target vision/CMakeFiles/vision_generate_messages_lisp.dir
+
+# All Build rule for target.
+vision/CMakeFiles/vision_generate_messages_lisp.dir/all: open_manipulator_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+vision/CMakeFiles/vision_generate_messages_lisp.dir/all: vision/CMakeFiles/_vision_generate_messages_check_deps_frameInfo.dir/all
+	$(MAKE) -f vision/CMakeFiles/vision_generate_messages_lisp.dir/build.make vision/CMakeFiles/vision_generate_messages_lisp.dir/depend
+	$(MAKE) -f vision/CMakeFiles/vision_generate_messages_lisp.dir/build.make vision/CMakeFiles/vision_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onebean/catkin_ws/build/CMakeFiles --progress-num=95 "Built target vision_generate_messages_lisp"
+.PHONY : vision/CMakeFiles/vision_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+vision/CMakeFiles/vision_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onebean/catkin_ws/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onebean/catkin_ws/build/CMakeFiles 0
+.PHONY : vision/CMakeFiles/vision_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+vision_generate_messages_lisp: vision/CMakeFiles/vision_generate_messages_lisp.dir/rule
+
+.PHONY : vision_generate_messages_lisp
+
+# clean rule for target.
+vision/CMakeFiles/vision_generate_messages_lisp.dir/clean:
+	$(MAKE) -f vision/CMakeFiles/vision_generate_messages_lisp.dir/build.make vision/CMakeFiles/vision_generate_messages_lisp.dir/clean
+.PHONY : vision/CMakeFiles/vision_generate_messages_lisp.dir/clean
+
+#=============================================================================
+# Target rules for target vision/CMakeFiles/vision_gennodejs.dir
+
+# All Build rule for target.
+vision/CMakeFiles/vision_gennodejs.dir/all: vision/CMakeFiles/vision_generate_messages_nodejs.dir/all
+	$(MAKE) -f vision/CMakeFiles/vision_gennodejs.dir/build.make vision/CMakeFiles/vision_gennodejs.dir/depend
+	$(MAKE) -f vision/CMakeFiles/vision_gennodejs.dir/build.make vision/CMakeFiles/vision_gennodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onebean/catkin_ws/build/CMakeFiles --progress-num= "Built target vision_gennodejs"
+.PHONY : vision/CMakeFiles/vision_gennodejs.dir/all
+
+# Build rule for subdir invocation for target.
+vision/CMakeFiles/vision_gennodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onebean/catkin_ws/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_gennodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onebean/catkin_ws/build/CMakeFiles 0
+.PHONY : vision/CMakeFiles/vision_gennodejs.dir/rule
+
+# Convenience name for target.
+vision_gennodejs: vision/CMakeFiles/vision_gennodejs.dir/rule
+
+.PHONY : vision_gennodejs
+
+# clean rule for target.
+vision/CMakeFiles/vision_gennodejs.dir/clean:
+	$(MAKE) -f vision/CMakeFiles/vision_gennodejs.dir/build.make vision/CMakeFiles/vision_gennodejs.dir/clean
+.PHONY : vision/CMakeFiles/vision_gennodejs.dir/clean
+
+#=============================================================================
+# Target rules for target vision/CMakeFiles/vision_generate_messages_eus.dir
+
+# All Build rule for target.
+vision/CMakeFiles/vision_generate_messages_eus.dir/all: open_manipulator_msgs/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+vision/CMakeFiles/vision_generate_messages_eus.dir/all: vision/CMakeFiles/_vision_generate_messages_check_deps_frameInfo.dir/all
+	$(MAKE) -f vision/CMakeFiles/vision_generate_messages_eus.dir/build.make vision/CMakeFiles/vision_generate_messages_eus.dir/depend
+	$(MAKE) -f vision/CMakeFiles/vision_generate_messages_eus.dir/build.make vision/CMakeFiles/vision_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onebean/catkin_ws/build/CMakeFiles --progress-num=93,94 "Built target vision_generate_messages_eus"
+.PHONY : vision/CMakeFiles/vision_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+vision/CMakeFiles/vision_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onebean/catkin_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onebean/catkin_ws/build/CMakeFiles 0
+.PHONY : vision/CMakeFiles/vision_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+vision_generate_messages_eus: vision/CMakeFiles/vision_generate_messages_eus.dir/rule
+
+.PHONY : vision_generate_messages_eus
+
+# clean rule for target.
+vision/CMakeFiles/vision_generate_messages_eus.dir/clean:
+	$(MAKE) -f vision/CMakeFiles/vision_generate_messages_eus.dir/build.make vision/CMakeFiles/vision_generate_messages_eus.dir/clean
+.PHONY : vision/CMakeFiles/vision_generate_messages_eus.dir/clean
+
+#=============================================================================
+# Target rules for target vision/CMakeFiles/vision_genpy.dir
+
+# All Build rule for target.
+vision/CMakeFiles/vision_genpy.dir/all: vision/CMakeFiles/vision_generate_messages_py.dir/all
+	$(MAKE) -f vision/CMakeFiles/vision_genpy.dir/build.make vision/CMakeFiles/vision_genpy.dir/depend
+	$(MAKE) -f vision/CMakeFiles/vision_genpy.dir/build.make vision/CMakeFiles/vision_genpy.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onebean/catkin_ws/build/CMakeFiles --progress-num= "Built target vision_genpy"
+.PHONY : vision/CMakeFiles/vision_genpy.dir/all
+
+# Build rule for subdir invocation for target.
+vision/CMakeFiles/vision_genpy.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onebean/catkin_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_genpy.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onebean/catkin_ws/build/CMakeFiles 0
+.PHONY : vision/CMakeFiles/vision_genpy.dir/rule
+
+# Convenience name for target.
+vision_genpy: vision/CMakeFiles/vision_genpy.dir/rule
+
+.PHONY : vision_genpy
+
+# clean rule for target.
+vision/CMakeFiles/vision_genpy.dir/clean:
+	$(MAKE) -f vision/CMakeFiles/vision_genpy.dir/build.make vision/CMakeFiles/vision_genpy.dir/clean
+.PHONY : vision/CMakeFiles/vision_genpy.dir/clean
+
+#=============================================================================
+# Target rules for target vision/CMakeFiles/vision_generate_messages_py.dir
+
+# All Build rule for target.
+vision/CMakeFiles/vision_generate_messages_py.dir/all: open_manipulator_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/all
+vision/CMakeFiles/vision_generate_messages_py.dir/all: vision/CMakeFiles/_vision_generate_messages_check_deps_frameInfo.dir/all
+	$(MAKE) -f vision/CMakeFiles/vision_generate_messages_py.dir/build.make vision/CMakeFiles/vision_generate_messages_py.dir/depend
+	$(MAKE) -f vision/CMakeFiles/vision_generate_messages_py.dir/build.make vision/CMakeFiles/vision_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onebean/catkin_ws/build/CMakeFiles --progress-num=97,98 "Built target vision_generate_messages_py"
+.PHONY : vision/CMakeFiles/vision_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+vision/CMakeFiles/vision_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onebean/catkin_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 vision/CMakeFiles/vision_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onebean/catkin_ws/build/CMakeFiles 0
+.PHONY : vision/CMakeFiles/vision_generate_messages_py.dir/rule
+
+# Convenience name for target.
+vision_generate_messages_py: vision/CMakeFiles/vision_generate_messages_py.dir/rule
+
+.PHONY : vision_generate_messages_py
+
+# clean rule for target.
+vision/CMakeFiles/vision_generate_messages_py.dir/clean:
+	$(MAKE) -f vision/CMakeFiles/vision_generate_messages_py.dir/build.make vision/CMakeFiles/vision_generate_messages_py.dir/clean
+.PHONY : vision/CMakeFiles/vision_generate_messages_py.dir/clean
 
 #=============================================================================
 # Target rules for target open_manipulator_simulations/open_manipulator_gazebo/CMakeFiles/controller_manager_msgs_generate_messages_cpp.dir

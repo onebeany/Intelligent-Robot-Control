@@ -140,6 +140,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/onebean/catkin_ws/build/open_manipulator/open_manipulator_controller/cmake_install.cmake")
   include("/home/onebean/catkin_ws/build/open_manipulator/open_manipulator_teleop/cmake_install.cmake")
   include("/home/onebean/catkin_ws/build/open_manipulator_dependencies/roboticsgroup_gazebo_plugins/cmake_install.cmake")
+  include("/home/onebean/catkin_ws/build/vision/cmake_install.cmake")
   include("/home/onebean/catkin_ws/build/open_manipulator/open_manipulator_description/cmake_install.cmake")
   include("/home/onebean/catkin_ws/build/open_manipulator_simulations/open_manipulator_gazebo/cmake_install.cmake")
 

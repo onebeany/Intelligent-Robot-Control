@@ -24,7 +24,7 @@ add_custom_target(_open_manipulator_msgs_generate_messages_check_deps_${_filenam
 
 get_filename_component(_filename "/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/KinematicsPose.msg" NAME_WE)
 add_custom_target(_open_manipulator_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "open_manipulator_msgs" "/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/KinematicsPose.msg" "geometry_msgs/Pose:geometry_msgs/Quaternion:geometry_msgs/Point"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "open_manipulator_msgs" "/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/KinematicsPose.msg" "geometry_msgs/Quaternion:geometry_msgs/Pose:geometry_msgs/Point"
 )
 
 get_filename_component(_filename "/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/OpenManipulatorState.msg" NAME_WE)
@@ -39,7 +39,7 @@ add_custom_target(_open_manipulator_msgs_generate_messages_check_deps_${_filenam
 
 get_filename_component(_filename "/home/onebean/catkin_ws/src/open_manipulator_msgs/srv/GetKinematicsPose.srv" NAME_WE)
 add_custom_target(_open_manipulator_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "open_manipulator_msgs" "/home/onebean/catkin_ws/src/open_manipulator_msgs/srv/GetKinematicsPose.srv" "geometry_msgs/Pose:open_manipulator_msgs/KinematicsPose:geometry_msgs/Quaternion:std_msgs/Header:geometry_msgs/Point"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "open_manipulator_msgs" "/home/onebean/catkin_ws/src/open_manipulator_msgs/srv/GetKinematicsPose.srv" "std_msgs/Header:geometry_msgs/Pose:open_manipulator_msgs/KinematicsPose:geometry_msgs/Point:geometry_msgs/Quaternion"
 )
 
 get_filename_component(_filename "/home/onebean/catkin_ws/src/open_manipulator_msgs/srv/SetJointPosition.srv" NAME_WE)
@@ -49,7 +49,7 @@ add_custom_target(_open_manipulator_msgs_generate_messages_check_deps_${_filenam
 
 get_filename_component(_filename "/home/onebean/catkin_ws/src/open_manipulator_msgs/srv/SetKinematicsPose.srv" NAME_WE)
 add_custom_target(_open_manipulator_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "open_manipulator_msgs" "/home/onebean/catkin_ws/src/open_manipulator_msgs/srv/SetKinematicsPose.srv" "geometry_msgs/Pose:open_manipulator_msgs/KinematicsPose:geometry_msgs/Quaternion:geometry_msgs/Point"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "open_manipulator_msgs" "/home/onebean/catkin_ws/src/open_manipulator_msgs/srv/SetKinematicsPose.srv" "geometry_msgs/Quaternion:geometry_msgs/Pose:open_manipulator_msgs/KinematicsPose:geometry_msgs/Point"
 )
 
 get_filename_component(_filename "/home/onebean/catkin_ws/src/open_manipulator_msgs/srv/SetDrawingTrajectory.srv" NAME_WE)
@@ -77,7 +77,7 @@ _generate_msg_cpp(open_manipulator_msgs
 _generate_msg_cpp(open_manipulator_msgs
   "/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/KinematicsPose.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/open_manipulator_msgs
 )
 _generate_msg_cpp(open_manipulator_msgs
@@ -97,7 +97,7 @@ _generate_srv_cpp(open_manipulator_msgs
 _generate_srv_cpp(open_manipulator_msgs
   "/home/onebean/catkin_ws/src/open_manipulator_msgs/srv/GetKinematicsPose.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/KinematicsPose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/KinematicsPose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/open_manipulator_msgs
 )
 _generate_srv_cpp(open_manipulator_msgs
@@ -109,7 +109,7 @@ _generate_srv_cpp(open_manipulator_msgs
 _generate_srv_cpp(open_manipulator_msgs
   "/home/onebean/catkin_ws/src/open_manipulator_msgs/srv/SetKinematicsPose.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/KinematicsPose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/KinematicsPose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/open_manipulator_msgs
 )
 _generate_srv_cpp(open_manipulator_msgs
@@ -174,7 +174,7 @@ _generate_msg_eus(open_manipulator_msgs
 _generate_msg_eus(open_manipulator_msgs
   "/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/KinematicsPose.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/open_manipulator_msgs
 )
 _generate_msg_eus(open_manipulator_msgs
@@ -194,7 +194,7 @@ _generate_srv_eus(open_manipulator_msgs
 _generate_srv_eus(open_manipulator_msgs
   "/home/onebean/catkin_ws/src/open_manipulator_msgs/srv/GetKinematicsPose.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/KinematicsPose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/KinematicsPose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/open_manipulator_msgs
 )
 _generate_srv_eus(open_manipulator_msgs
@@ -206,7 +206,7 @@ _generate_srv_eus(open_manipulator_msgs
 _generate_srv_eus(open_manipulator_msgs
   "/home/onebean/catkin_ws/src/open_manipulator_msgs/srv/SetKinematicsPose.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/KinematicsPose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/KinematicsPose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/open_manipulator_msgs
 )
 _generate_srv_eus(open_manipulator_msgs
@@ -271,7 +271,7 @@ _generate_msg_lisp(open_manipulator_msgs
 _generate_msg_lisp(open_manipulator_msgs
   "/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/KinematicsPose.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/open_manipulator_msgs
 )
 _generate_msg_lisp(open_manipulator_msgs
@@ -291,7 +291,7 @@ _generate_srv_lisp(open_manipulator_msgs
 _generate_srv_lisp(open_manipulator_msgs
   "/home/onebean/catkin_ws/src/open_manipulator_msgs/srv/GetKinematicsPose.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/KinematicsPose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/KinematicsPose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/open_manipulator_msgs
 )
 _generate_srv_lisp(open_manipulator_msgs
@@ -303,7 +303,7 @@ _generate_srv_lisp(open_manipulator_msgs
 _generate_srv_lisp(open_manipulator_msgs
   "/home/onebean/catkin_ws/src/open_manipulator_msgs/srv/SetKinematicsPose.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/KinematicsPose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/KinematicsPose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/open_manipulator_msgs
 )
 _generate_srv_lisp(open_manipulator_msgs
@@ -368,7 +368,7 @@ _generate_msg_nodejs(open_manipulator_msgs
 _generate_msg_nodejs(open_manipulator_msgs
   "/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/KinematicsPose.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/open_manipulator_msgs
 )
 _generate_msg_nodejs(open_manipulator_msgs
@@ -388,7 +388,7 @@ _generate_srv_nodejs(open_manipulator_msgs
 _generate_srv_nodejs(open_manipulator_msgs
   "/home/onebean/catkin_ws/src/open_manipulator_msgs/srv/GetKinematicsPose.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/KinematicsPose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/KinematicsPose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/open_manipulator_msgs
 )
 _generate_srv_nodejs(open_manipulator_msgs
@@ -400,7 +400,7 @@ _generate_srv_nodejs(open_manipulator_msgs
 _generate_srv_nodejs(open_manipulator_msgs
   "/home/onebean/catkin_ws/src/open_manipulator_msgs/srv/SetKinematicsPose.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/KinematicsPose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/KinematicsPose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/open_manipulator_msgs
 )
 _generate_srv_nodejs(open_manipulator_msgs
@@ -465,7 +465,7 @@ _generate_msg_py(open_manipulator_msgs
 _generate_msg_py(open_manipulator_msgs
   "/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/KinematicsPose.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/open_manipulator_msgs
 )
 _generate_msg_py(open_manipulator_msgs
@@ -485,7 +485,7 @@ _generate_srv_py(open_manipulator_msgs
 _generate_srv_py(open_manipulator_msgs
   "/home/onebean/catkin_ws/src/open_manipulator_msgs/srv/GetKinematicsPose.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/KinematicsPose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/KinematicsPose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/open_manipulator_msgs
 )
 _generate_srv_py(open_manipulator_msgs
@@ -497,7 +497,7 @@ _generate_srv_py(open_manipulator_msgs
 _generate_srv_py(open_manipulator_msgs
   "/home/onebean/catkin_ws/src/open_manipulator_msgs/srv/SetKinematicsPose.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/KinematicsPose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/onebean/catkin_ws/src/open_manipulator_msgs/msg/KinematicsPose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/open_manipulator_msgs
 )
 _generate_srv_py(open_manipulator_msgs
