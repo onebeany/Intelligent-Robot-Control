@@ -69,7 +69,7 @@ def facedetect():
     # ===================================
     # calibration added
     # ===================================
-    new_camera_matrix, roi = cv2.getOptimalNewCameraMatrix(camera_matrix, dist_coeffs, (frame_width, frame_height), 1, (frame_width, frame_height))
+    new_camera_matrix, roi = cv2.getOptimalNewCameraMatrix(camera_matrix, dist_coeffs, (frame_width, frame_height), 0, (frame_width, frame_height))
     
     while not rospy.is_shutdown():
         ret, frame = cap.read()

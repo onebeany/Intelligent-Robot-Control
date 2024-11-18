@@ -25,6 +25,7 @@
 #include <vision/frameInfo.h>
 
 #define NUM_OF_JOINT 4
+#define JOINT_DELTA 0.05
 #define PATH_TIME 0.5
 #define INIT_JOINT1 0.0
 #define INIT_JOINT2 0.0
@@ -45,11 +46,12 @@ class OpenManipulatorTeleop
   *****************************************************************************/
   ros::NodeHandle node_handle_;
   ros::NodeHandle priv_node_handle_;
-  
+
   /*****************************************************************************
   ** Variables
   *****************************************************************************/
   std::vector<double> present_joint_angle_;
+  open_manipulator_msgs::SetJointPosition srv_;
 
   /*****************************************************************************
   ** Init Functions
@@ -65,6 +67,8 @@ class OpenManipulatorTeleop
 
   void jointStatesCallback(const sensor_msgs::JointState::ConstPtr &msg);
   void faceInfoCallback(const vision::frameInfo::ConstPtr &msg);
+  void callServiceWithTimeout();
+
 
   /*****************************************************************************
   ** ROS Clients
