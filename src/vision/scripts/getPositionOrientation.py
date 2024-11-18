@@ -57,5 +57,5 @@ theta_1 = 0  # [deg]
 theta_2 = 0  # [deg]
 theta_3 = 0  # [deg]
 position = calculate_position(psi_1, theta_1, theta_2, theta_3)
-
+orientation = [0, psi_1, theta_1 + theta_2 + theta_3]
 print("Position (x, y, z):", position)
