@@ -6,6 +6,25 @@ import rospkg
 import os
 from vision.msg import frameInfo
 
+
+# ===================================
+# camera params
+# ===================================
+camera_matrix = np.array([
+    [686.7524367891678,                    0,       315.4776203834513],
+    [0,                    687.4812657062831,       250.1768816072397],
+    [0,                                    0,                       1]
+], dtype=np.float32)
+
+dist_coeffs = np.array([0.121744376569873, -0.233277477793470, 0, 0, 0], dtype=np.float32)
+
+hfov = 0.851720674973233     #[rad] = 48.8[deg]
+vfov = 0.499164166070378     #[rad] = 28.6[deg]
+
+
+def cal_rad(errorX, errorY, width, height):
+    return [(errorX / width)  * (hfov / 2), (errorY / height) * (vfov / 2)]
+
 def facedetect():
     # Initialize ROS node
     rospy.init_node('face_detector', anonymous=True)
@@ -37,11 +56,22 @@ def facedetect():
 
     font = cv2.FONT_HERSHEY_SIMPLEX
     prev_time = cv2.getTickCount()
-    
+
+    # ===================================
+    # calibration added
+    # ===================================
+    new_camera_matrix, roi = cv2.getOptimalNewCameraMatrix(camera_matrix, dist_coeffs, (frame_width, frame_height), 1, (frame_width, frame_height))
+
     while not rospy.is_shutdown():
         ret, frame = cap.read()
         if not ret:
             break
+
+        # ===================================
+        # calibration added
+        # ===================================
+
+        frame = cv2.undistort(frame, camera_matrix, dist_coeffs, None, new_camera_matrix)
 
         # Initialize message with default values
         msg = frameInfo()
@@ -82,6 +112,10 @@ def facedetect():
             cv2.rectangle(frame, (x,y), (x+w, y+h), (0,255,0), 2)
             # Draw center point
             cv2.circle(frame, (msg.centerX, msg.centerY), 3, (0,0,255), -1)
+
+        # errorX [pixel -> radian]
+        msg.errorX, msg.errorY = cal_rad(msg.errorX, msg.errorY, frame_width, frame_height)
+
 
         # Display FPS
         cv2.putText(frame, f'FPS: {int(fps)}', (10, 30), font, 1, (0, 255, 0), 2)

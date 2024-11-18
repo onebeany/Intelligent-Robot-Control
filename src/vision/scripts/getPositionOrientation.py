@@ -50,7 +50,6 @@ def calculate_position(psi_1_deg, theta_1_deg, theta_2_deg, theta_3_deg):
     return position
 
 
-
 # Example usage
 psi_1 =   0  # [deg]
 theta_1 = 0  # [deg]
